@@ -93,14 +93,62 @@ impl Monkey {
 
     fn get_throw_recipient(&self, worry: u128) -> usize {
         match self.id {
-            0 => if worry % 7 == 0 { 6 } else { 7 },
-            1 => if worry % 13 == 0 { 5 } else { 2 },
-            2 => if worry % 5 == 0 { 4 } else { 5 },
-            3 => if worry % 19 == 0 { 6 } else { 0 },
-            4 => if worry % 2 == 0 { 0 } else { 3 },
-            5 => if worry % 11 == 0 { 3 } else { 4 },
-            6 => if worry % 17 == 0 { 1 } else { 7 },
-            7 => if worry % 3 == 0 { 2 } else { 1 },
+            0 => {
+                if worry % 7 == 0 {
+                    6
+                } else {
+                    7
+                }
+            }
+            1 => {
+                if worry % 13 == 0 {
+                    5
+                } else {
+                    2
+                }
+            }
+            2 => {
+                if worry % 5 == 0 {
+                    4
+                } else {
+                    5
+                }
+            }
+            3 => {
+                if worry % 19 == 0 {
+                    6
+                } else {
+                    0
+                }
+            }
+            4 => {
+                if worry % 2 == 0 {
+                    0
+                } else {
+                    3
+                }
+            }
+            5 => {
+                if worry % 11 == 0 {
+                    3
+                } else {
+                    4
+                }
+            }
+            6 => {
+                if worry % 17 == 0 {
+                    1
+                } else {
+                    7
+                }
+            }
+            7 => {
+                if worry % 3 == 0 {
+                    2
+                } else {
+                    1
+                }
+            }
             _ => 0,
         }
     }

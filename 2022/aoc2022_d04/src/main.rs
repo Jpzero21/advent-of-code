@@ -62,4 +62,3 @@ fn ranges_overlap(vec: &Vec<i32>) -> bool {
     }
     false
 }
-

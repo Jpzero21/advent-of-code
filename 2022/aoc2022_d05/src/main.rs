@@ -19,7 +19,8 @@ fn main() {
 
     let re = Regex::new(r"(\d{2})|(\d)").unwrap();
 
-    let input_file = File::open("inputs/2022/d05/move_operations.txt").expect("Cannot open input file.");
+    let input_file =
+        File::open("inputs/2022/d05/move_operations.txt").expect("Cannot open input file.");
     let file_reader = BufReader::new(&input_file);
 
     for l in file_reader.lines() {

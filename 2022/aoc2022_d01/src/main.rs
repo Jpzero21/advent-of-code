@@ -30,4 +30,3 @@ fn main() {
         all_elves[0] + all_elves[1] + all_elves[2]
     );
 }
-

@@ -60,4 +60,3 @@ fn move_right(vec: &mut Vec<char>, index: &mut usize, line: &String) -> () {
     *index += 1;
     vec[len] = line.chars().nth(*index + len).unwrap();
 }
-
