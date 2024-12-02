@@ -28,7 +28,7 @@ pub fn solution(grid: &Vec<Vec<i32>>) -> i32 {
     for side in sides {
         visit_from(side, &grid, &mut set, &mut number_visible);
     }
-    return number_visible;
+    number_visible
 }
 
 fn visit_from(side: Side, grid: &Vec<Vec<i32>>, set: &mut HashSet<(usize, usize)>, vis: &mut i32) {
@@ -103,7 +103,7 @@ impl Side {
                 side.col_end = 0;
             }
         }
-        return side;
+        side
     }
 
     fn move_next(&self, position: &mut usize) {

@@ -7,7 +7,7 @@ pub fn solution(grid: &Vec<Vec<i32>>) -> u64 {
             max_score = max(max_score, get_scenic_score(&grid, row, col));
         }
     }
-    return max_score;
+    max_score
 }
 
 fn get_scenic_score(grid: &Vec<Vec<i32>>, r: usize, c: usize) -> u64 {
@@ -39,5 +39,5 @@ fn get_scenic_score(grid: &Vec<Vec<i32>>, r: usize, c: usize) -> u64 {
         }
     }
 
-    return above * below * left * right;
+    above * below * left * right
 }

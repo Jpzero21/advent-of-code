@@ -1,10 +1,3 @@
-/*
-    Advent of Code 2022 / Day 2: https://adventofcode.com/2022/day/2
-    Q1: What would your total score be if everything goes exactly according to your strategy guide?
-    Q2: Following the Elf's instructions for the second column,
-        what would your total score be if everything goes exactly according to your strategy guide?
-*/
-
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
@@ -26,7 +19,7 @@ enum Shape {
 }
 
 fn main() {
-    let input_file = File::open("./input.txt").expect("Cannot open input file.");
+    let input_file = File::open("inputs/2022/d02/input.txt").expect("Cannot open input file.");
     let file_reader = BufReader::new(&input_file);
 
     let mut old_total_score = 0;

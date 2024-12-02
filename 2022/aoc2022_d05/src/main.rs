@@ -1,10 +1,3 @@
-/*
-    Advent of Code 2022 / Day 5: https://adventofcode.com/2022/day/5
-    --- Day 5: Supply Stacks ---
-    Q1: After the rearrangement procedure completes, what crate ends up on top of each stack?
-    Q2: After the rearrangement procedure completes, what crate ends up on top of each stack?
-*/
-
 use regex::Regex;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
@@ -26,7 +19,7 @@ fn main() {
 
     let re = Regex::new(r"(\d{2})|(\d)").unwrap();
 
-    let input_file = File::open("./move_operations.txt").expect("Cannot open input file.");
+    let input_file = File::open("inputs/2022/d05/move_operations.txt").expect("Cannot open input file.");
     let file_reader = BufReader::new(&input_file);
 
     for l in file_reader.lines() {

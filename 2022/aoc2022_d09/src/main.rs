@@ -1,12 +1,3 @@
-/*
-    Advent of Code 2022 / Day 9: https://adventofcode.com/2022/day/9
-    --- Day 9: Rope Bridge ---
-    Q1: Simulate your complete hypothetical series of motions.
-        How many positions does the tail of the rope visit at least once?
-    Q2: Simulate your complete series of motions on a larger rope with ten knots.
-        How many positions does the tail of the rope visit at least once?
-*/
-
 use std::collections::HashSet;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
@@ -45,7 +36,7 @@ fn main() {
     set_two.insert((0, 0));
     // ---------------------------- //
 
-    let file = File::open("./input.txt").expect("Could not open input file.");
+    let file = File::open("inputs/2022/d09/input.txt").expect("Could not open input file.");
     let file_reader = BufReader::new(&file);
 
     for l in file_reader.lines() {

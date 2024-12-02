@@ -1,18 +1,9 @@
-/*
-    Advent of Code 2022 / Day 3: https://adventofcode.com/2022/day/3
-    --- Day 3: Rucksack Reorganization ---
-    Q1: Find the item type that appears in both compartments of each rucksack.
-        What is the sum of the priorities of those item types?
-    Q2: Find the item type that corresponds to the badges of each three-Elf group.
-        What is the sum of the priorities of those item types?
-*/
-
 use std::collections::HashSet;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let input_file = File::open("./input.txt").expect("Cannot open input file.");
+    let input_file = File::open("inputs/2022/d03/input.txt").expect("Cannot open input file.");
     let file_reader = BufReader::new(&input_file);
 
     // ---------- A1 variables ---------- //

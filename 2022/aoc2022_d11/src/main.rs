@@ -1,11 +1,3 @@
-/*
-    Advent of Code 2022 / Day 11: https://adventofcode.com/2022/day/11
-    --- Day 11: Monkey in the Middle ---
-    Q1: What is the level of monkey business after 20 rounds of stuff-slinging simian shenanigans?
-    Q2: Starting again from the initial state in your puzzle input, what is the level of monkey
-        business after 10000 rounds?
-*/
-
 struct Monkey {
     id: usize,
     items: Vec<u128>,
@@ -101,14 +93,14 @@ impl Monkey {
 
     fn get_throw_recipient(&self, worry: u128) -> usize {
         match self.id {
-            0 => return if worry % 7 == 0 { 6 } else { 7 },
-            1 => return if worry % 13 == 0 { 5 } else { 2 },
-            2 => return if worry % 5 == 0 { 4 } else { 5 },
-            3 => return if worry % 19 == 0 { 6 } else { 0 },
-            4 => return if worry % 2 == 0 { 0 } else { 3 },
-            5 => return if worry % 11 == 0 { 3 } else { 4 },
-            6 => return if worry % 17 == 0 { 1 } else { 7 },
-            7 => return if worry % 3 == 0 { 2 } else { 1 },
+            0 => if worry % 7 == 0 { 6 } else { 7 },
+            1 => if worry % 13 == 0 { 5 } else { 2 },
+            2 => if worry % 5 == 0 { 4 } else { 5 },
+            3 => if worry % 19 == 0 { 6 } else { 0 },
+            4 => if worry % 2 == 0 { 0 } else { 3 },
+            5 => if worry % 11 == 0 { 3 } else { 4 },
+            6 => if worry % 17 == 0 { 1 } else { 7 },
+            7 => if worry % 3 == 0 { 2 } else { 1 },
             _ => 0,
         }
     }

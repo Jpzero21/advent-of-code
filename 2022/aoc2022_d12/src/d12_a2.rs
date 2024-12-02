@@ -57,7 +57,7 @@ fn check_next(grid: &Grid, prev: Node, next: Node, current_len: i32, visited: &m
         return i32::MAX;
     }
 
-    return if visited.contains_key(&next) {
+    if visited.contains_key(&next) {
         if visited.get(&next).unwrap() > &(current_len + 1) {
             find_first_a(&grid, next, current_len + 1, visited)
         } else {
@@ -65,5 +65,5 @@ fn check_next(grid: &Grid, prev: Node, next: Node, current_len: i32, visited: &m
         }
     } else {
         find_first_a(&grid, next, current_len + 1, visited)
-    };
+    }
 }

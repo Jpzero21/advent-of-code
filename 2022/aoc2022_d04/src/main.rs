@@ -1,16 +1,9 @@
-/*
-    Advent of Code 2022 / Day 4: https://adventofcode.com/2022/day/4
-    --- Day 4: Camp Cleanup ---
-    Q1: In how many assignment pairs does one range fully contain the other?
-    Q2: In how many assignment pairs do the ranges overlap?
-*/
-
 use regex::Regex;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let input_file = File::open("./input.txt").expect("Cannot open input file.");
+    let input_file = File::open("inputs/2022/d04/input.txt").expect("Cannot open input file.");
     let file_reader = BufReader::new(&input_file);
 
     let re = Regex::new(r"(\d{2})|(\d)").unwrap();

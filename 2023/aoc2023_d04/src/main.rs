@@ -5,7 +5,7 @@ use std::{
 };
 
 fn main() {
-    let input_file = File::open("./input.txt").expect("Could not open input file");
+    let input_file = File::open("inputs/2023/d04/input.txt").expect("Could not open input file");
     let file_reader = BufReader::new(&input_file);
 
     let mut total_points = 0;
@@ -19,7 +19,7 @@ fn main() {
 
     println!("There were {} total points", total_points);
 
-    let input_file = File::open("./input.txt").expect("Could not open input file");
+    let input_file = File::open("inputs/2023/d04/input.txt").expect("Could not open input file");
     let file_reader = BufReader::new(&input_file);
 
     let mut multiplier: Vec<u32> = std::iter::repeat(1)

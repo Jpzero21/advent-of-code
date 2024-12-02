@@ -1,16 +1,8 @@
-/*
-    Advent of Code 2022 / Day 1: https://adventofcode.com/2022/day/1
-    Q1: Find the Elf carrying the most Calories.
-        How many total Calories is that Elf carrying?
-    Q2: Find the top three Elves carrying the most Calories.
-        How many Calories are those Elves carrying in total?
-*/
-
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let input_file = File::open("./input.txt").expect("Cannot open input file.");
+    let input_file = File::open("inputs/2022/d01/input.txt").expect("Cannot open input file.");
     let file_reader = BufReader::new(&input_file);
 
     let mut all_elves: Vec<i32> = Vec::new();

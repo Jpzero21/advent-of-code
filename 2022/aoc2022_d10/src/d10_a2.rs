@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 pub fn solution() {
-    let file = File::open("./input.txt").expect("Could not open input file.");
+    let file = File::open("inputs/2022/d10/input.txt").expect("Could not open input file.");
     let file_reader = BufReader::new(&file);
 
     let mut screen = vec![vec![' '; 40]; 6];

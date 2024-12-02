@@ -1,17 +1,8 @@
-/*
-    Advent of Code 2022 / Day 6: https://adventofcode.com/2022/day/6
-    --- Day 6: Tuning Trouble ---
-    Q1: How many characters need to be processed before the first start-of-packet
-        marker is detected?
-    Q2: How many characters need to be processed before the first start-of-message
-        marker is detected?
-*/
-
 use std::fs::File;
 use std::io::Read;
 
 fn main() {
-    let mut input_file = File::open("./input.txt").expect("Cannot open input file.");
+    let mut input_file = File::open("inputs/2022/d06/input.txt").expect("Cannot open input file.");
     let mut line = String::new();
     input_file
         .read_to_string(&mut line)

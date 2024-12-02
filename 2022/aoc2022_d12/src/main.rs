@@ -1,12 +1,3 @@
-/*
-    Advent of Code 2022 / Day 12: https://adventofcode.com/2022/day/12
-    --- Day 12: Hill Climbing Algorithm ---
-    Q1: What is the fewest steps required to move from your current position to the location
-        that should get the best signal?
-    Q2: What is the fewest steps required to move starting from any square with elevation a
-        to the location that should get the best signal?
-*/
-
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
@@ -14,7 +5,7 @@ mod d12_a1;
 mod d12_a2;
 
 fn main() {
-    let file = File::open("./input.txt").expect("Could not open input file.");
+    let file = File::open("inputs/2022/d12/input.txt").expect("Could not open input file.");
     let file = BufReader::new(&file);
 
     let mut grid: Vec<Vec<u8>> = Vec::new();
