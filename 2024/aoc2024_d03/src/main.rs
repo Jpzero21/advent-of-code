@@ -33,14 +33,14 @@ fn filter_out_disabled(line: String) -> String {
 
     while let Some(start_cutoff) = line.find(dont_op) {
         let end_cutoff = match &line[start_cutoff + dont_op.len()..].find(do_op) {
-            Some(i) => i + start_cutoff + dont_op.len() + do_op.len() - 1,
+            Some(i) => i + start_cutoff + dont_op.len() + do_op.len(),
             None => {
                 line = String::from(&line[..start_cutoff]);
                 break;
             }
         };
 
-        line = format!("{}{}", &line[..start_cutoff], &line[end_cutoff + 1..]);
+        line = format!("{}{}", &line[..start_cutoff], &line[end_cutoff..]);
     }
 
     line
