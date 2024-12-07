@@ -179,16 +179,23 @@ fn known_upper_bound(
     }
 }
 
-fn attempt_insert(arr: &mut Vec<u8>, greater_than_index: usize, lower_than_index: usize, new: u8) {
+fn attempt_insert(
+    order: &mut Vec<u8>,
+    greater_than_index: usize,
+    lower_than_index: usize,
+    new_number: u8,
+) {
     if lower_than_index == greater_than_index + 1 {
         // our sorted array looks like
+        //
         //       greater_than_index
-        //           |    lower_than_index
-        //           |    |
-        // [x, x, x, gt, r.high, x, x, x]
-        //              |
-        //            insert new here
-        arr.insert(lower_than_index, new);
+        //              |             lower_than_index
+        //              |               |
+        // [x, x, x, greater_than, lower_than, x, x, x]
+        //                        |
+        //                  insert new page number here
+        //
+        order.insert(lower_than_index, new_number);
     }
 }
 
