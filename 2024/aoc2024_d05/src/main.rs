@@ -1,4 +1,9 @@
+use crate::sorter::sort_rules;
+
+mod init;
 mod sorter;
+#[cfg(test)]
+mod tests;
 
 struct Rule {
     low: u8,
@@ -6,32 +11,36 @@ struct Rule {
 }
 
 fn main() {
-    let all_rules: Vec<Rule> = vec![
-        Rule { low: 47, high: 53 },
-        Rule { low: 47, high: 53 },
-        Rule { low: 97, high: 13 },
-        Rule { low: 97, high: 61 },
-        Rule { low: 97, high: 47 },
-        Rule { low: 75, high: 29 },
-        Rule { low: 61, high: 13 },
-        Rule { low: 75, high: 53 },
-        Rule { low: 29, high: 13 },
-        Rule { low: 97, high: 29 },
-        Rule { low: 53, high: 29 },
-        Rule { low: 61, high: 53 },
-        Rule { low: 97, high: 53 },
-        Rule { low: 61, high: 29 },
-        Rule { low: 47, high: 13 },
-        Rule { low: 75, high: 47 },
-        Rule { low: 97, high: 75 },
-        Rule { low: 47, high: 61 },
-        Rule { low: 75, high: 61 },
-        Rule { low: 47, high: 29 },
-        Rule { low: 75, high: 13 },
-        Rule { low: 53, high: 13 },
-    ];
+    let ordering_rules = init::read_ordering_rules();
+    let sorted_rules = sort_rules(ordering_rules);
+    let pages = init::read_pages_to_update();
 
-    let sorted_rules = sorter::sort_rules(all_rules);
-    println!("sorted rules: {:?}", sorted_rules);
-    assert_eq!(sorted_rules, vec![97, 75, 47, 61, 53, 29, 13]);
+    let mut sum: u64 = 0;
+    for page in pages {
+        if valid_updates(&sorted_rules, &page) {
+            sum += *page.get(page.len().div_ceil(2)).unwrap() as u64;
+        }
+    }
+
+    println!("{}", sum)
+}
+
+fn valid_updates(reference: &Vec<u8>, updates: &Vec<u8>) -> bool {
+    let mut ref_i = 0;
+    let mut updates_i = 0;
+
+    while ref_i < reference.len() {
+        if updates_i == updates.len() {
+            return true;
+        }
+
+        if updates[updates_i] == reference[ref_i] {
+            updates_i += 1;
+            ref_i += 1;
+        } else {
+            ref_i += 1;
+        }
+    }
+
+    false
 }
