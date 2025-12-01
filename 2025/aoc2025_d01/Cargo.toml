@@ -1,0 +1,6 @@
+[package]
+name = "aoc2025_d01"
+edition = "2024"
+
+[dependencies]
+regex = "1.12.2"
